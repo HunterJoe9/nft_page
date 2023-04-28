@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.cdnfonts.com/css/commodore-64-pixelized");
+
+body {
+  font-family: "Commodore 64 Pixelized", sans-serif;
+}
