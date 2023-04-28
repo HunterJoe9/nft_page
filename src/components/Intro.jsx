@@ -2,10 +2,33 @@ import { BsNintendoSwitch } from "react-icons/bs";
 import { TbHandClick } from "react-icons/tb";
 import Banner from "./Banner";
 
+import { useState } from "react";
+
+const urlRanPage = [
+  "https://nft-page-ver-princess.vercel.app/",
+  "https://last-beta.vercel.app/",
+  "https://rubberduck-pied.vercel.app/",
+  "https://my-nfts-five.vercel.app/",
+  "https://my-nft-page-phi.vercel.app/",
+  "https://poker-hand-site-cwlc.vercel.app/",
+  "https://nft-page-pied.vercel.app/",
+  "https://nft-page-yalralloo.vercel.app",
+  "https://nftpagepractice-git-main-ppisland.vercel.app",
+  "https://final-g2ov8p44p-youngwoongjin.vercel.app",
+  "https://nft-page-project.vercel.app/",
+  "https://my-nft-page.vercel.app/",
+  "https://my-nft-page-i4wmp1zom-zzeongho.vercel.app/",
+  "https://nft-project-peach.vercel.app/",
+  "https://nft-page-clone-project.vercel.app/",
+];
 const ranNum = Math.floor(Math.random() * 50) + 1;
 const imgSrc = `${process.env.REACT_APP_IMAGE_URL}/${ranNum}.png`;
 
 const Intro = ({ totalNft, mintedNft, myNft }) => {
+  const [ranPageArr, setRanPageArr] = useState(
+    urlRanPage[Math.floor(Math.random() * urlRanPage.length)]
+  );
+
   return (
     <div className="bg-gradient-to-t from-transparent to-red-400">
       <div className="pt-4">
@@ -56,12 +79,14 @@ const Intro = ({ totalNft, mintedNft, myNft }) => {
                     <div className="text-gray-300 ">My NFT</div>
                     <div className="font-bold">{myNft}</div>
                   </div>
-                  <div className="ml-56 cursor-pointer ">
-                    For More Collection
-                    <div className="flex justify-end">
-                      <TbHandClick size={24} />
-                    </div>
-                  </div>
+                  <a href={`${ranPageArr}`}>
+                    <button className="ml-56 cursor-pointer ">
+                      For More Collection
+                      <div className="flex justify-end">
+                        <TbHandClick size={24} />
+                      </div>
+                    </button>
+                  </a>
                 </div>
               </div>
             </div>
